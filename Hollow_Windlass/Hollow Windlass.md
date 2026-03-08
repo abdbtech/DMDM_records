@@ -13,6 +13,6 @@ Upon the failure identification all work was stopped.
 
 It was found that the issue could be easily identified by shining a flashlight behind the windlass and seeing if light transmitted through the piece:
 
-![failure mode when illuminated](defect_inspection.jpg)
+![failure mode when illuminated](<img src="defect_inspection.jpg" width="400">)
 
 
