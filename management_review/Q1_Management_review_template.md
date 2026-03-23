@@ -1,11 +1,11 @@
 ## Q1 Management Reivew Record
 
+<!--
 Date of the meeting in DDMMMYY format (ex. 01JAN24).
-13MAR2026
-MJ, JK, RF, AB
-
+List of member names.
 Decisions made resulting from review of any of the items defined in section Activities to review
 Action to be taken as a result of discussion and decisions made.
+-->
 
 Activities to review
 
