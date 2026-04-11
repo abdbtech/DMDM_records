@@ -112,4 +112,3 @@ A raw pressure testing system based on fluid and a calibrated fluid gauge. There
 
 [8] COMBAT-C: Control of Major Bleeding by Application of Tourniquets over Clothing. *PMC*, 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC11141013/
 
-
