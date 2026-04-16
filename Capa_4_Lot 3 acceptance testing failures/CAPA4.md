@@ -45,33 +45,70 @@ The purpose of the DMDM project is to provide safe and effective medical devices
 
 ## Testing 
 
-### 25MAY26 UWO tester investigation testing
+All test data referenced can be found:
+[test data](lot_acceptance_testing_data.csv)
 
+### 09MAR26 Testing
+Testing showed confounding results where the values observed were low, including those on predicate devices. 200-224mmHg were the maximum measurements obtained across multiple devices
 
+A new blood pressure cuff was used for this testing and all subsequent testing included under this CAPA. 
+
+### 18MAR26 Testing
+Further confounding data was observed during this testing with maximum values of 68.33 observed for DMDDM TQ1 and 77.23 for SAM.
+
+After this testing the TRN-ARM-1 device was completely rebuilt, including all wiring. During the rebuild it was noted the load cell has a directional indicator. The direction of the load cell installation prior to the rebuild could not be confirmed. The TRN-ARM was mounted onto a stable platform in order to make testing easier for the operator and to reduce the incidence of serial comm disconnection during testing. 
+
+### 01APR26 Testing
+Testing produced results consistent with LOT1 and LOT2 acceptance testing including predicate device results. 
+
+Testing was performed methodically with new operators (under the supervision of AB/MJ) and the UWO paper was followed closely. During testing it was determined that there is an error in sketch `Unite_tester.ino` where the S value must be calculated, then the sketch must be modified to change the `Force` variable to the `mmHg` variable in order to obtain accurate measurements. 
+
+Review of 08MAR and 18MAR testing indicates raw `Force` (in Newtons) was likely measured which bypasses the pressure conversion as specified by the UWO paper. These results should be considered invalid unless retroactive conversion is applied. 
+
+### 08APR26 Testing
+
+During the first test, TQ1, a similar situation to the confounding test sessions was experienced where a tourniquet was showing low values (210mmHg) while under extremely high tension, close to the operator's physical capability. 
+
+After calibrating the TRN-ARM and obtaining new S values the subsequent testing showed acceptable results, including with predicate devices. 
+
+## Conclusions
+
+The TRN-ARM test device is state of the art for non-pnumatic tourniquet testing, with no predicate equivalent. However given this is a new technology and with minimal adoption, DMDM is effectively proving out this device. The testing shows the TRN-ARM to be accurate but highly imprecise. The root cause of the testing variability could only be partially determined but it is most likely a combination of test operator, calibration sensitivity and component quality/resolution. A formal Gage R&R would better reveal the root cause. 
+
+DMDM tests all lots against predicate devices which partially eliminates the problem of variability from test session to test session and lack of precision. Analysis should be performed on the data in order to determine if normalization or masking is acceptable. 
+
+The critical windlass failures observed both happened at the upper bounds of the physical operation of the TQ-1. It is plausible that the operators over tightened the tourniquets attempting to reach peak value when the TRN-ARM was reading artificially low pressures. 
+
+Given the testing against the predicate devices, lot 3 may be released. 
+
+### Additional test methods
+
+Given the risks associated with a single test platform used for final lot acceptance testing, and in order to make a more robust upstream inspection process it was decided to pursue the following new test devices:
+
+#### Flexure and tensile tester
+An open source flexure and tensile tester for testing both completed components and 3D print filament samples to observe lot to lot raw material properties
+
+https://github.com/CNCKitchen/Open-Pull
+
+#### Raw pressure tester
+
+A raw pressure testing system based on fluid and a calibrated fluid gauge. There are possible research papers related to this approach but this will have to be developed in house. This idea is based on anecdotal methods used in Ukraine where a soda bottle filled with ballistics jell and a pressure gage are used for tourniquet validation. 
 
 ## References
 
 [1] Liu, Dawei, et al. “Distributed Manufacturing of an Open-Source Tourniquet Testing System.” HardwareX, vol. 15, 1 Sept. 2023, pp. e00442–e00442, ncbi.nlm.nih.gov/pmc/articles/PMC10338363/, https://doi.org/10.1016/j.ohx.2023.e00442. Accessed 22 Apr. 2024.
+
 [2] Systematic Review and Meta-Analysis of Tourniquet Pressures in Upper Limb Surgery. *Journal of Clinical Medicine*, 2025. https://www.mdpi.com/2077-0383/14/6/1938
+
 [3] McEwen, J.A. Surgical Tourniquet Technology Adapted for Military and Prehospital Use. NATO RTO-MP-HFM-109, 2004. https://www.delfimedical.com/wp-content/uploads/2013/07/MP-HFM-109-P-19-McEwen.pdf
+
 [4] Limb Occlusion Pressure Versus Standard Tourniquet Inflation Pressure in Minor Hand Surgery: A Randomized Controlled Trial. *Journal of Orthopaedic Surgery and Research*, 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC10386602/
+
 [5] Development of Adaptive Pneumatic Tourniquet Systems Based on Minimal Inflation Pressure for Upper Limb Surgeries. *BioMedical Engineering OnLine*, 2013. https://link.springer.com/article/10.1186/1475-925X-12-92
+
 [6]Montgomery, H. R., Hammesfahr, R., Fisher, A. D., Cain, J. S., Greydanus, D. J., Butler, F. K., Goolsby, C., & Eastman, A. L. (2019). 2019 Recommended Limb Tourniquets in Tactical Combat Casualty Care. Journal of Special Operations Medicine, 19(4), 27–27. https://doi.org/10.55460/hqdv-7sxn
+
 [7] Assessing the Current Generation of Tourniquets. *PubMed*, 2020. https://pubmed.ncbi.nlm.nih.gov/32091602/
+
 [8] COMBAT-C: Control of Major Bleeding by Application of Tourniquets over Clothing. *PMC*, 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC11141013/
-
-
-
-### possible causes
-
-In house vs external (CB vs AB) printers
-
-Supplier (Bambu) material change
-
-
-### Testing
-
-build test lot. Lot 3 TEST where x touniuquets are made using parts from supplier A, supplier B and material A, material B.
-
-
 
