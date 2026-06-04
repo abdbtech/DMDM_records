@@ -1,6 +1,13 @@
-date, traing_step, trainee_name, trainer_name
+date, traing_step, trainee_ID, trainer_ID
 2026-01-15, 'Hook & loop glued to clip', 'ML', 'JK'
 2026-01-15, 'Hook & loop glued to clip', 'VB', 'JK'
-2026-04-29, 'Final Inspection', 'AB', 'KAB'
+2026-04-29, 'Final Inspection', 'KAB', 'AB'
+2026-06-03, 'Hook & loop glued to clip', 'IM', 'MJ'
+2026-06-03, 'Hook & loop glued to clip', 'DC', 'MJ'
+2026-06-03, 'Hook & loop glued to clip', '', 'MJ'
 
+IM = Rat Poison 
+DC = Asarum
+AB = Alex Barton, Operations and Quality Specialist, Member
+MJ = Mike J, Operations Specialist and Quality Specialist, Member
 
